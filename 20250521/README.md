@@ -40,6 +40,18 @@
 
   - Step 2: run the `pyfirmata_prac_1.ipynb` (in the same folder with this README.md), if encounter problems (refer to the subsection **Problem** of this section **Firmata** to find possible solutions).
 
+## Using `pyfirmata_prac_2.ipynb` to control [Anthony switch board order](https://www.tinytronics.nl/en/switches/relays/relay-modules/12v-relay-16-channel-low-active-with-lm2596-step-down-buck-converter)
+
+- How to operate the switch board:
+
+  - The **Blue input gates (GND, VCC)**: GND - GND of power supply (e.g Barrel jack on board + 12 VDC supply jack); VCC - 12 VDC supply.
+
+  - To control a relay, for example relay number 2, next to the **Blue input gates** are the connections to the control signals of every relay component on the board (i.e **_control signal array_**). **IMPORTANT**: the GND from **_control signal array_** **MUST NOT** connected to the supply GND. the GND from **_control signal array_** **MUST** connect to the GND of the control board (e.g an Arduino board to generate the control signal (i.e the signal the turn ON/OFF the relay)). The pin number 2 from **_control signal array_** must be connected to a digital pin (e.g digital pin 10) of the Arduino board, in order to control (turn ON/OFF) the relay number 2 of the board.
+
+  - The input sigal to a relay is the input pin **Common** of every relay component. The input pin **Common** is one of the ends of the switch (i.e relay). The other end of the switch is the pin **NO** (i.e normally open).
+
+- Using pyfirmata program `pyfirmata_prac_2.ipynb` to communicate with the arduino board to output signal on the digital pin 10 to control the relay number 2 as the setup mentioned in **How to operate the switch board:** (above). 
+
 ## Problem
 
 - `AttributeError: module 'inspect' has no attribute 'getargspec' with pyfirmata`, 
@@ -47,3 +59,4 @@
   - According to ChatGPT: "because getargspec was removed in Python 3.11, and pyFirmata (or a dependency like pyserial or pyfirmata2) may still try to use it..Use Python 3.10 or earlier"
 
     - Solution: going into the working conda env, downgrade the python verison: `conda install python=3.10`
+
