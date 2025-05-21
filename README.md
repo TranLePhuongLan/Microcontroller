@@ -14,15 +14,15 @@
 
 - 2. [Firmata](https://realpython.com/arduino-python/)
 
-  - According to the link 2., the **firmata** is a package in Arduino IDE to support python language. That means we can directly code python in Arduino IDE. 
+  - According to the link 2., the **firmata** is a package to support python program in local PC to communicate with the Arduino board (same as `Pyserial`, but much more easier to use) 
 
   - Disadvantages:
 
-   - The python packages are constrained to the support **firmata** in Arduino IDE.
+   - same as `Pyserial`
 
   - Advantages:
 
-   - The application runs directly on the Arduino board alone, without depending on connected local computer.
+   - More high-level language library compared to `Pyserial`.
 
 # Arduino IDE
 

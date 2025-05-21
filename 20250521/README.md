@@ -25,3 +25,25 @@
   - In Arduino IDE, compile and upload the sketch `pyserial_prac_1.ino` (in the same folder with this README.md) to the Arduino board
 
   - Open any IDE (e.g Vscode) to run the `microcontroller.ipynb` (in the same folder with this README.md) 
+
+# Firmata
+
+- [1] refer to `../README.md` - section **Python with Arduino** - subsection 2. Firmata
+
+- [2] https://www.geeksforgeeks.org/control-arduino-with-python-and-pyfirmata/
+
+## How to use it?
+
+- refer to the reference [1] of Firmata section (above)
+
+  - Step 1: open Arduino IDE, upload the **Files -> Examples -> Firmata -> StandardFirmata** to the arduino board (setup the serial communication support by the pyfirmata library).
+
+  - Step 2: run the `pyfirmata_prac_1.ipynb` (in the same folder with this README.md), if encounter problems (refer to the subsection **Problem** of this section **Firmata** to find possible solutions).
+
+## Problem
+
+- `AttributeError: module 'inspect' has no attribute 'getargspec' with pyfirmata`, 
+
+  - According to ChatGPT: "because getargspec was removed in Python 3.11, and pyFirmata (or a dependency like pyserial or pyfirmata2) may still try to use it..Use Python 3.10 or earlier"
+
+    - Solution: going into the working conda env, downgrade the python verison: `conda install python=3.10`
